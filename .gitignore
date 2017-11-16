@@ -1,0 +1,5 @@
+# Build artifacts
+*.py[cod]
+
+# Egg
+*.egg-info
