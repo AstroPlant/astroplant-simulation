@@ -111,4 +111,5 @@ class Environment:
 if not Environment._running:
     Environment._running = True
     thread = threading.Thread(target = Environment.simulate)
+    thread.daemon = True
     thread.start()
