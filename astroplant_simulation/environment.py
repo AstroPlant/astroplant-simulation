@@ -50,7 +50,7 @@ class Environment:
         """
         Simulate the environment.
         """
-        while True:
+        while clss._running:
             clss.current_date_time += datetime.timedelta(seconds = clss._dtime)
 
             clss.simulate_step(clss._dtime)
