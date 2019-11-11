@@ -1,4 +1,4 @@
-import asyncio
+import trio
 from astroplant_kit.peripheral import *
 from . import environment
 

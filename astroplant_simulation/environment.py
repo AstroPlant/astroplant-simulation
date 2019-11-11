@@ -19,8 +19,8 @@ class Environment:
     _simulation_sleep = 0.1
 
     #: Simulation time step in seconds
-    _dtime = 50 
-    
+    _dtime = 50
+
     #: The current date and time
     current_date_time = datetime.datetime(year = 2017, month = 11, day = 16, hour = 8)
 
@@ -106,7 +106,7 @@ class Environment:
 
         # Return last value otherwise
         return val
-            
+
 
 if not Environment._running:
     Environment._running = True
