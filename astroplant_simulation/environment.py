@@ -37,7 +37,7 @@ class Environment:
     ambient_air_humidity = 35
 
     #: Kit air temperature
-    kit_air_temperature = 20.0
+    kit_air_temperature = 27.0
 
     #: Kit air pressure
     kit_air_pressure = 1000

@@ -11,7 +11,8 @@ class Temperature(Sensor):
 
     def __init__(self, *args, configuration):
         super().__init__(*args)
-        self.sleep = configuration["timeSleep"]
+        self.measurement_interval = configuration["intervals"]["measurementInterval"]
+        self.aggregate_interval = configuration["intervals"]["aggregateInterval"]
 
     async def measure(self):
         temperature = environment.Environment.kit_air_temperature + random.uniform(
@@ -21,7 +22,6 @@ class Temperature(Sensor):
             "Temperature", "Degrees Celsius", temperature
         )
 
-        await trio.sleep(self.sleep / 1000)
         return temperature_measurement
 
 
@@ -32,7 +32,8 @@ class Pressure(Sensor):
 
     def __init__(self, *args, configuration):
         super().__init__(*args)
-        self.sleep = configuration["timeSleep"]
+        self.measurement_interval = configuration["intervals"]["measurementInterval"]
+        self.aggregate_interval = configuration["intervals"]["aggregateInterval"]
 
     async def measure(self):
         pressure = environment.Environment.kit_air_pressure + random.uniform(
@@ -42,7 +43,6 @@ class Pressure(Sensor):
             "Pressure", "Hectopascal", pressure
         )
 
-        await trio.sleep(self.sleep / 1000)
         return pressure_measurement
 
 
@@ -53,7 +53,8 @@ class Barometer(Sensor):
 
     def __init__(self, *args, configuration):
         super().__init__(*args)
-        self.sleep = configuration["timeSleep"]
+        self.measurement_interval = configuration["intervals"]["measurementInterval"]
+        self.aggregate_interval = configuration["intervals"]["aggregateInterval"]
 
     async def measure(self):
         temperature = environment.Environment.kit_air_temperature + random.uniform(
@@ -77,5 +78,4 @@ class Barometer(Sensor):
             "Pressure", "Hectopascal", pressure
         )
 
-        await trio.sleep(self.sleep / 1000)
         return [temperature_measurement, humidity_measurement, pressure_measurement]
