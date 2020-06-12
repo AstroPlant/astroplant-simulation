@@ -64,7 +64,7 @@ class Barometer(Sensor):
             "Temperature", "Degrees Celsius", temperature
         )
 
-        humidity = environment.Environment.kit_air_humidity + random.uniform(
+        humidity = environment.Environment.kit_air_humidity * 100.0 + random.uniform(
             -0.95, 0.95
         )
         humidity_measurement = self.create_raw_measurement(

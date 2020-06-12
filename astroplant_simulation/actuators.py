@@ -1,6 +1,7 @@
 import trio
 from astroplant_kit.peripheral import *
-from . import environment
+from .environment import environment
+
 
 class VirtualDisplay(Display):
     def display(self, str):
