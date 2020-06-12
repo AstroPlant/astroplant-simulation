@@ -19,10 +19,12 @@ class Heater(Actuator):
 
     def __init__(self, *args, configuration):
         super().__init__(*args)
-        print(f'config for {self.name}: {configuration}')
+        print(f"config for {self.name}: {configuration}")
 
     async def do(self, command):
-        print(f'got command: {command}')
+        FULL_WATTAGE = 100.0
+        if "heat" in command:
+            environment.set_kit_heating(self.name, FULL_WATTAGE * command["heat"] / 100.0)
 
     async def run(self):
         """
