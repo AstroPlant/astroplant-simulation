@@ -118,11 +118,6 @@ class Environment:
 
     @property
     def kit_air_humidity(self):
-        print("hum")
-        print(relative_humidity(
-            self.kit_air_specific_humidity, self.kit_air_temperature
-        ))
-
         return relative_humidity(
             self.kit_air_specific_humidity, self.kit_air_temperature
         )
