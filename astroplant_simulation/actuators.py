@@ -1,5 +1,5 @@
 import trio
-from astroplant_kit.peripheral import *
+from astroplant_kit.peripheral import Display, Actuator
 from .environment import environment
 
 
@@ -22,9 +22,11 @@ class Heater(Actuator):
         print(f"config for {self.name}: {configuration}")
 
     async def do(self, command):
-        FULL_WATTAGE = 100.0
+        FULL_WATTAGE = 10.0
         if "heat" in command:
-            environment.set_kit_heating(self.name, FULL_WATTAGE * command["heat"] / 100.0)
+            environment.set_kit_heating(
+                self.name, FULL_WATTAGE * command["heat"] / 100.0
+            )
 
     async def run(self):
         """
