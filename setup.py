@@ -10,5 +10,5 @@ setup(
     author_email="thomas@kepow.org",
     url="https://astroplant.io",
     packages=["astroplant_simulation",],
-    install_requires=["numpy~=1.0", "pillow~=7.0", "schedule~=0.6"],
+    install_requires=["numpy~=1.0", "pillow~=8.0", "schedule~=0.6"],
 )
